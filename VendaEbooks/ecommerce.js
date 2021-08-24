@@ -1,13 +1,22 @@
-class Ecommerce{
-    produts
-    loggedUsers
+//import  User from './user';
+const User = require("./user")
 
-    constructor(produts){
-        this.produts = produts
+class Ecommerce{
+    registeredUsers = []
+    
+    createUser(user){
+        const newUser = new User(user);
+        this.registeredUsers.push(newUser);
+        //this.registeredUsers.push(new User(user))
+        console.log(newUser);
     }
 
-    addProduct(product){
-        this.produts.push(product);
+    //arrow function
+    //funcao anonima
+    login = (email, password) => {
+        console.log(email, password);
+        const user = this.registeredUsers.find(user => user.email === email && user.password === password);
+        return user;
     }
 }
 
