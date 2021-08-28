@@ -10,17 +10,28 @@ const process = async () => {
     const x = resultado.x;
     const y = resultado.y;
 
-    console.log("X: ", x)
-    console.log("Y: ", y)
+    console.log("X:", x)
+    console.log("Y:", y)
 
     try{
         if(x == undefined){
-            console.log('O valor de X não é definido')
+            //Se os valores de X ou de Y não forem definidos
+            throw "O valor de X não é definido" //vai printar essa mensagem de erro no catch
+            //O throw define como erro e chama o catch
+        }
+        else if(y == undefined){
+            throw 'O valor de Y não é definido'
+        }
+        else if(y === 0){
+            throw 'Não é possível dividir por 0'
+        }
+        else{
+            const resposta = x/y;
+            console.log("X/Y = ", resposta)
         }
     }
-    catch{
-        const resposta = x/y;
-        console.log("X/Y = ", resposta)
+    catch(erro){
+        console.log('Erro:', erro)
     }
 }
 

@@ -17,20 +17,29 @@ const process = async () =>{
         .then(res => res.json())
         .then(res => res.y)
 
-    console.log(x)
-    console.log(y)
+    console.log("X:",x)
+    console.log("Y:",y)
 
     try{
         if(x === undefined){
-            console.log("O valor de X não é definido")
+            //O valor de X ou Y não é definido
+            throw "O valor de X não é definido" //vai printar essa mensagem como erro no catch
+            //Se entrar aqui o throw envia como um erro 
+            //e cai direto para o catch
         }
-        else if( y === undefined){
-            console.log('O valor de Y não é definido')
+        else if(y === undefined){
+            throw 'O valor de Y não é definido'
+        }
+        else if(y === 0){
+            throw 'Não é possível dividir por 0'
+        }
+        else{
+            const resultado = x/y;
+            console.log('X/Y = ', resultado)
         }
     }
-    catch{
-        const resultado = x/y;
-        console.log('A divisão de X por Y é: ', resultado)
+    catch(erro){
+        console.log('Erro:', erro)
     }
 }
 

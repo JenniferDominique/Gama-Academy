@@ -10,12 +10,12 @@ GET http://localhost:6000/gety
 
 ## Para começar...
 
-- Digite o seguinte comando para baixar as dependências tando na pasta de api como na pasta de consumer
-'''
+- Digite o seguinte comando para baixar as dependências tando na pasta de **api** como na pasta de **consumer**
+```
 yarn
-'''
+```
 
-- Para levantar os servidores tanto de api como de consumer, abra cada servidor em um terminal e digite
-'''
+- Para levantar os servidores tanto de **api** como de **consumer**, abra cada servidor em um terminal e digite
+```
 yarn start
-'''
+```
